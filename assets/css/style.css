@@ -1,0 +1,176 @@
+:root {
+  --background: #f7f7f5;
+  --surface: #ffffff;
+  --text: #252522;
+  --muted: #686862;
+  --accent: #315c55;
+  --rule: #dcdcd6;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.cv {
+  width: min(100% - 2rem, 52rem);
+  margin: 3rem auto;
+  padding: clamp(2rem, 5vw, 4.5rem);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  box-shadow: 0 1rem 3rem rgb(27 39 36 / 7%);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 8vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+h1 + p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 3.75rem 0 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin: 2rem 0 0.35rem;
+  font-size: 1.18rem;
+  font-weight: 650;
+}
+
+h3 + p {
+  margin-top: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+ul {
+  margin: 0.75rem 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin: 0.55rem 0;
+  padding-left: 0.25rem;
+}
+
+li::marker {
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.14em;
+}
+
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+strong {
+  font-weight: 650;
+}
+
+@media (max-width: 38rem) {
+  html {
+    font-size: 16px;
+  }
+
+  .cv {
+    width: 100%;
+    margin: 0;
+    padding: 2.25rem 1.25rem 3.5rem;
+    border: 0;
+    box-shadow: none;
+  }
+
+  h2 {
+    margin-top: 3rem;
+  }
+}
+
+@media print {
+  :root {
+    --background: #ffffff;
+    --text: #000000;
+    --muted: #333333;
+    --accent: #000000;
+    --rule: #bdbdbd;
+  }
+
+  html {
+    font-size: 10.5pt;
+  }
+
+  .cv {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  li,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  a {
+    color: inherit;
+  }
+}
