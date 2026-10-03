@@ -9,8 +9,21 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
+    {% assign cv_sections = content | split: '<h2' %}
     <main class="cv" aria-label="Curriculum Vitae">
-      {{ content }}
+      <header class="hero">
+        <div class="hero__inner">
+          {{ cv_sections | first }}
+        </div>
+      </header>
+
+      <div class="sections">
+        {% for cv_section in cv_sections offset:1 %}
+          <section class="cv-section">
+            <h2{{ cv_section }}
+          </section>
+        {% endfor %}
+      </div>
     </main>
   </body>
 </html>

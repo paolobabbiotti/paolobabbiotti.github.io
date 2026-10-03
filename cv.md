@@ -5,8 +5,6 @@ permalink: /
 
 # Paolo Babbiotti
 
-Europass Curriculum Vitae | 14 September 2026
-
 ## Personal Information
 
 - Nationality: Italian
