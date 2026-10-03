@@ -10,7 +10,21 @@
   </head>
   <body>
     {% assign cv_sections = content | split: '<h2' %}
-    <main class="cv" aria-label="Curriculum Vitae">
+    <nav class="site-nav" aria-label="CV sections">
+      <div class="site-nav__inner">
+        <a class="site-nav__brand" href="#top" aria-label="Back to top">CV</a>
+        <div class="site-nav__links">
+          {% for cv_section in cv_sections offset:1 %}
+            {% assign id_parts = cv_section | split: '"' %}
+            {% assign heading_parts = cv_section | split: '>' %}
+            {% assign label_parts = heading_parts[1] | split: '</h2' %}
+            <a href="#{{ id_parts[1] }}">{{ label_parts[0] | strip_html }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </nav>
+
+    <main class="cv" id="top" aria-label="Curriculum Vitae">
       <header class="hero">
         <div class="hero__inner">
           {{ cv_sections | first }}
